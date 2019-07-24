@@ -1,0 +1,360 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>2019 CUSP Capstone Project: Do Uber/Lyft reduce Parking Violations in NYC?</title>
+        
+<!-- 
+Sentra Template
+
+https://templatemo.com/tm-518-sentra
+-->
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">     
+        <link rel="stylesheet" href="css/fontAwesome.css">
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    </head>
+
+<body>
+
+        <header class="nav-down responsive-nav hidden-lg hidden-md">
+            <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!--/.navbar-header-->
+            <div id="main-nav" class="collapse navbar-collapse">
+                <nav>
+                    <ul class="nav navbar-nav">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#motivation">Overview</a></li>
+                        <li><a href="#data">Data</a></li>
+                        <li><a href="#methology">Methology</a></li>
+                        <li><a href="#conclusion">Conclusion</a></li>
+                        <li><a href="#aboutus">About Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div class="sidebar-navigation hidde-sm hidden-xs">
+            <div class="logo">
+                <a href="https://cusp.nyu.edu/" target="_blank"><img src="img/cusplogo.png" alt="NYU CUSP logo" id='cusplogo'></a>
+                <hr>
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#home">
+                            <span class="rect"></span>
+                            <span class="circle"></span>
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#motivation">
+                            <span class="rect"></span>
+                            <span class="circle"></span>
+                            Overview
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#data">
+                            <span class="rect"></span>
+                            <span class="circle"></span>
+                            Data
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#methology">
+                            <span class="rect"></span>
+                            <span class="circle"></span>
+                            Methology
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#conclusion">
+                            <span class="rect"></span>
+                            <span class="circle"></span>
+                            Conclusion
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#aboutus">
+                            <span class="rect"></span>
+                            <span class="circle"></span>
+                            About Us
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <ul class="social-icons">
+                <li><a href="https://github.com/uberlyftparkingviolation/NYU-CUSP-Capstone-2019"><i class="fa fa-github" style='font-size:18pt;'> Code</i></a></li>
+                <li><a href="https://www.overleaf.com/read/gdgpwbgpwvnh"><i class="fa fa-file-pdf-o" style='font-size:18pt;'> Report</i></a></li>
+            </ul>
+        </div>
+
+        <div class="homeimage">
+        	<div class="hometitle content-section" id="home">
+                <div class="item item-1">
+                    <div class="image"></div>
+                    <div class="info">
+                          <h1>Do Uber/Lyft Reduce <br>Parking Violations in NYC?</h1>
+                          <h3>NYU CUSP Capstone Project 2019</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-content">    
+            <section id="motivation" class="content-section">
+                <div class="section-heading">
+                    <h1>Project<br><em>Overview</em></h1>
+                </div>
+                <div class="section-content">
+                    <div class='moti-wordcontent1'>
+                        <h3>Our Motivation</h3>
+                        <p>Given these companies' soaring ambition and rapid expansion, Uber and Lyft are not only reshaping the For-Hire Vehicles(FHV) market but also our urban agglomerations. However, some of the effects, for example, in the public transit system and city congestion, are suspected to be harmful to our cities. Due to the limited availability of Uber & Lyft trip data, most of these concerns have not been proven.</p>
+                        </div>
+                    <div class='moti-wordcontent2'>                      
+                        <h3>Our Goal</h3>
+                        <p>Hence, the project is designed to address one particular impact could be made by Uber & Lyft: whether daily Uber & Lyft trips affect parking violations in NYC. We decided to leverage the data science models on NYC parking ticket and Uber/Lyft trip dataset to explore the casual effect of Uber & Lyft rides on parking violations. We aims to use the project to help the public better understand the impact of Uber & Lyft and offer policy insight to the TNC regulation.
+                        </p>
+                    </div>
+                    <div>
+                        <img src="img/intro1.png" class='moti-image'>
+                    </div>
+                </div>
+            </section>
+            <hr>
+            <section id="data" class="content-section">
+                <div class="section-heading">
+                    <h1>Project<br><em>Data</em></h1>
+                </div>
+                <div class="section-content">
+                        <table style="width:100%" id='datatable'>
+                            <tr>
+                                <td><img src="img/trip.png" id="mlabel" ></td>
+                                <td><img src="img/ticket.png" id="mlabel" ></td>
+                                <td><img src="img/otherdata.png" id="mlabel" ></td>
+                            </tr>
+
+                            <tr>
+                                <td><h3><a href="https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page" target="_blank">NYC Uber & Lyft Trip Data</a><h3></td>
+                                <td><h3><a href="https://data.cityofnewyork.us/browse?q=parking+ticket" target="_blank">NYC Parking Data</a></h3></td>
+                                <td><h3><a href="https://github.com/pranay-anchan/Capstone/tree/master/data" target="_blank">Other Related NYC Data</a></h3></td>
+                            </tr>
+
+                            <tr>
+                                <td><p class='d1'>The dataset includes each Uber and Lyft trip from 2014 to 2018. We used NYC For-Hire Vehicle (FHV) data to extract the dataset, and use the variable, dispatching base number, to identify FHV companies.</p></td>
+                                <td><p class='d1'>The dataset includes every parking ticket issued in New York from 2013 to 2019, and we only used data from 2014 to 2018. This dataset were obtained from NYC Open Data. </p></td>
+                                <td><p class='d1'>Five additional datasets are included to be used for the DID model as clustering and predicting variable and for the Bayesian Network as potential causation of parking violation.</p></td>
+                            </tr>
+                        </table>
+
+                </div>
+            </section>
+            <section id="methology" class="content-section">
+                    <div class="col-md-12">
+                        <div class="section-heading">
+                            <h1>Project<br><em>Methology</em></h1>
+                        </div>
+                <div class="section-content">
+                    <div class="tabs-content">
+                        <div class='method-intro'>
+                            <p><span style='font-size: 18px; font-weight: 600'>Three </span>different models were applied to effectivly explain the casual effect of Uber/Lyft on NYC parking violations.</p> Firstly, a <b>Bayesian Network</b> was built to determine whether there is a casual effect; upon which, two advanced models, <b>Fixed Effect</b>, and <b>Difference in Differences (DID)</b> were introduced to explore the direction and strength of the causal effect</b>.
+                        </div>
+
+                        <div class="wrapper">
+                            <ul class="tabs clearfix" data-tabgroup="first-tab-group">
+                              <li><a href="#tab1" class="active">Bayesian Network</a></li>
+                              <li><a href="#tab2">Fixed Effect</a></li>
+                              <li><a href="#tab3">Difference in Difference</a></li>       
+                            </ul>
+                            <section id="first-tab-group" class="tabgroup">
+                                <div id="tab1" class='tab11'>
+                                    <p>Due to Bayesian Network's ability to identify causation, we believe it is an effective tool to itially determine whether Uber & Lyft can directly or indirectly cause parking violations in NYC.</p>
+
+                                   <p>The  key  step  for  building  a Bayesian Network is structure learning, which estimates a <b>directed acyclic graph (DAG)</b> that captures the dependencies between the variables given a set of data records.  In this project, <b>score-based structure learning</b> and <b>constraint-based structure learning </b>algorithms were are used to learn the causal structure</p>
+
+                                   <p><b>Score-based Structure Learning</b> construes model selection as an optimization task. It has two building blocks: first apply a 'scoring function' that maps models to a numerical score, based on how well they fit to a given data set; second perform 'search strategy' to traverse the search space of possible models and select a model with optimal score.</p>
+
+                                   <p><b>Constraint-based Structure Learning</b> attempts to capture the directionality of causal relationships correctly. It has two building blocks: identifying independencies in the data set using hypothesis tests and constructing a DAG according to identified independencies.</p>
+                                </div>
+                                <div id="tab2" class='tab11'>
+                                    <p>Fixed effects model (FEM) is widely used to <b>control</b> for the <b>effect of unobserved variables</b> when performing causal inference with panel data, so it fits our project well. To develop a FEM, dummy variables of each taxi zone is added to a standard OLS model to evaluate the fixed effects of the number of Uber & Lyft trips across different taxi cab zones. Considering the model for taxi zones i = 1, ...... , N which is observed at certain time periods t = 1, ...... , T: </p> 
+                                    <img src="img/fe.png" id='m1' class='methodp'>
+                                    <p>where Yit and Xit are, respectively, the number of parking tickets (dependent variable) and the number of Uber & Lyft trips (independent variables) in the i-th taxi zone at time t; Zi are unobserved, time-invariant dummy variables in different taxi zones; β and γ represent coefficients of the independent variables and dummy variables; α and uit refers to the intercept and the error term. The coefficient, β , of the independent variables would indicate the causal effect exerted by Uber & Lyft trips on parking violations.</p>
+                                </div>
+                                <div id="tab3" class='tab11'>
+                                    <p>Within the framework of natural science, two identical NYCs, one having TNC companies operating the other not, were needed to strictly prove the causal effect of Uber & Lyft on parking violations. However, such <b>ideal 'treatment groups' and 'control groups'</b> were <b>impossible</b> to be found or developed in social science research. Consequently, <b>DID model</b> was applied in this project to <b>solve this problem</b>. The Figure below shows the general idea of DID and how it works.</p>
+                                    <img src="img/did1.png" id='m1' class='methodp'>
+                                    <p>The 'treatment object' and 'control object', P and S, have status P1 and S1 on time period 1, and status P2 and S2 on time period 2. Based on the DID's most critical assumption, parallel trend assumption, that any existing factor would have same effect on P and S, shown by the parallel S1 to S2 line and P1 to Q dotted line DID, the difference between Q and S2 on the second time period equals the difference between P1 and S1 on the first time period, and the difference between P2 and Q represents the effect of the outside factor or treatment.</p>
+                                    <p>For this project, to fulfill DID's parallel trend assumption, cross-clustering was applied to find paris of multi-dimensionally homogeneous taxi zones, which can be used as 'treatment group' and 'control group'. Because the Uber & Lyft trip data demonstrated that the effect of ridesharing cars became noticeable since 2015, the parking violation data before 2015 and other related socio-economic, demographic, and facility data of taxi zones were taken into clustering to identify homogeneous taxi zones.</p>
+
+                                </div>
+                            </section> 
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </section>
+            <hr>
+            <section id="conclusion" class="content-section">
+                <div class="col-md-12">
+                    <div class="section-heading">
+                        <h1>Results &<br><em>Conclusions</em></h1>
+                    </div>
+                <div class="section-content">
+                    <div class="tabs-content">
+                    <div class='result-intro'>
+                            <p><span style='font-size: 18px; font-weight: 600'>Based</span> on the results of the three models, we can conclude that Uber & Lyft is able to reduce parking violation in NYC. </P>
+                            <P>So, in this aspect, Uber & Lyft is <b> beneficial</b> to NYC, and potentially to other major cities in the world. However, we still have not clearly determine how strong the effect is, and this question can be a further improvement of our project.</p>
+                            <p>With millions of users in the world,  Uber & Lyft has far-reaching impacts; some yet to be  identified and explored.  This project serves as an example to apply machine learning methods on the available data to study and prove un-noticed yet potential effects of ride-share companies on cities.</p>
+                        </div>
+                        <div class="wrapper">
+                            <ul class="tabs clearfix2" data-tabgroup="second-tab-group">
+                              <li><a href="#tab21" class="active">Bayesian Network</a></li>
+                              <li><a href="#tab22">Fixed Effect</a></li>
+                              <li><a href="#tab23">Difference in Differences</a></li>       
+                            </ul>
+                            <section id="second-tab-group" class="tabgroup">
+                                <div id="tab21" class='tab11'>
+                                    <img src="img/r1.jpg" id='r1' class='resultsp'>
+                                    <p class='rt'> Uber & Lyft has a direct impact on parking tickets</p>
+                                    <p class='rc'>According to the above figure, there are four variables that directly impact parking ticket: Meter Parking Capacity, Parking Lot Capacity, Misdemeanor Crime Rate and Number of Uber & Lyft trips. However, Bayesian Network cannot tell us whether the impact is positive or negative and how strong the impact is.</p>
+                                </div>
+                                <div id="tab22" class='tab11'>
+                                    <img src="img/r2.png" id='r2' class='resultsp'>
+                                    <p class='rt'>Uber & Lyft are reducing NYC parking violation but the effect is not significant </p>
+                                    <p class='rc'>The fixed effects model (FEM) controls for the unobserved factors.
+                                        According to Figure above, the coefficient of Uber & Lyft trips (pickup) is -0.0007, indicating Uber \& Lyft trips reduces NYC parking violation slightly. However, this modeled relationship is not statistically significant, because the p-value of 0.677, is much larger than the significance level, 0.05, making the result of FEM less reliable.</p>
+                                </div>
+                                <div id="tab23" class='tab11'>
+                                    <img src="img/r3.png" id='r3' class='resultsp'>
+                                    <p class='rt'>Uber & Lyft is able to reduce NYC parking violation significantly </p>
+                                    <p class='rc'> The figure above shows Flatiron and Midtown Center were identified as a pair of highly homogenous taxi zones, and, in total, 900 pairs (2.7% of all possible pairs) are determined by the DID model. Based on these pairs, the DID model gave an average causal effect intensity of 224.2, which implies that an increase of 224.2 Uber & Lyft pickups is associated with a decrease of 1 parking ticket.</p>
+                                </div>  
+                            </section> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </section>
+            <hr>
+            <section id="aboutus" class="content-section">
+            	<div id="aboutus-content">
+                    <div class="section-heading">
+                        <h1>About<br><em>Us</em></h1>
+                    </div>
+                    <div class="section-content">
+                        <div class='stu'>
+                        <h3>Our Team </h3>
+                        <p id='aboutdisc'>- The Project is completed by 5 master students at NYU Center for Urban Science + Progress</p>
+                        <table style="width:100%">
+                            <tr>
+                                <td><img src="img/mlabel.png" id="mlabel" ></td>
+                                <td><img src="img/mlabel.png" id="mlabel" ></td>
+                                <td><img src="img/mlabel.png" id="mlabel" ></td>
+                                <td><img src="img/flabel.png" id="mlabel" ></td>
+                                <td><img src="img/mlabel.png" id="mlabel" ></td>
+                            </tr>
+
+                            <tr>
+                                <td>Junru Lu  <a href="https://github.com/LuJunru"><i class="fa fa-github"></i></a></td>
+                                <td>Junjie Cai <a href="https://github.com/JunjieTsai"><i class="fa fa-github"></i></a></td>
+                                <td>Pranay Anchan <a href="https://github.com/pranay-anchan"><i class="fa fa-github"></i></a></td>
+                                <td>Shijia Gu <a href="https://github.com/sg5718"><i class="fa fa-github"></i></a></td>
+                                <td>Yuxuan Wang <a href="https://github.com/jasonwang1031?tab=repositories"><i class="fa fa-github"></i></a></td>
+                            </tr>
+                        </table>
+                        </div>
+                        <hr>
+                        <div class='sponsor'>
+                        <h3> Our Sponsor </h3>
+                        <p id='aboutdisc'>- The Project is sponsored and guided by Professor Guo Zhan from NYU Wagner School of Public Service</p>
+                        <table style="width:112%">
+                            <tr>
+                                <td><img src="img/wagnerlogo.png" id="sponsor1" ></td>
+                                <td><img src="img/plabel.png" id="sponsor2" ></td>
+                            </tr>
+
+                            <tr>
+                                <td><a href="https://wagner.nyu.edu/">NYU Wagner</a></td>
+                                <td><a href="https://wagner.nyu.edu/community/faculty/zhan-guo">Prof. Zhan Guo</a></td>
+                            </tr>
+                        </table>
+                        </div>
+                    </div>
+                </div>
+               	<div id="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3025.124984226357!2d-73.9897193843413!3d40.693244946699195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a4bc7bbe7bd%3A0x4f8a4904b54128ac!2sCUSP+NYU!5e0!3m2!1sen!2sus!4v1561960372741!5m2!1sen!2sus"width="100%" height="400px" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+            </section>
+            <section class="footer">
+                <p>Copyright @ NYU CUSP Capstone Project Group</p>
+            </section>
+        </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+    <script src="js/vendor/bootstrap.min.js"></script>
+    
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        // Hide Header on on scroll down
+        var didScroll;
+        var lastScrollTop = 0;
+        var delta = 5;
+        var navbarHeight = $('header').outerHeight();
+
+        $(window).scroll(function(event){
+            didScroll = true;
+        });
+
+        setInterval(function() {
+            if (didScroll) {
+                hasScrolled();
+                didScroll = false;
+            }
+        }, 250);
+
+        function hasScrolled() {
+            var st = $(this).scrollTop();
+            
+            // Make sure they scroll more than delta
+            if(Math.abs(lastScrollTop - st) <= delta)
+                return;
+            
+            // If they scrolled down and are past the navbar, add class .nav-up.
+            // This is necessary so you never see what is "behind" the navbar.
+            if (st > lastScrollTop && st > navbarHeight){
+                // Scroll Down
+                $('header').removeClass('nav-down').addClass('nav-up');
+            } else {
+                // Scroll Up
+                if(st + $(window).height() < $(document).height()) {
+                    $('header').removeClass('nav-up').addClass('nav-down');
+                }
+            }
+            
+            lastScrollTop = st;
+        }
+    </script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+    <script></script>
+</body>
+</html>
